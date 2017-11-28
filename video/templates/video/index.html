@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Streaming</title>
+    {% load static %}
+    <link href="{% static "videojs/video-js.css" %}" rel="stylesheet">
+    <script src="{% static "videojs/video.js" %}"></script>
+    <script src="{% static "videojs/videojs-contrib-hls.js" %}"></script>
+</head>
+<body>
+<video autoplay controls preload="none" id="player" class="video-js vjs-default-skin" height="480"
+       width="640">
+    <source src="http://localhost:8000/hls/test/index.m3u8" type="application/x-mpegURL"/>
+</video>
+<script>var player = videojs("#player");</script>
+</body>
+</html>
